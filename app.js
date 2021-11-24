@@ -11,7 +11,6 @@ const obj = {
 // sendFile will go here
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/index.html")
-    res.send(obj)
 });
 
 app.listen(port, () => {

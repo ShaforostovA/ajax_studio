@@ -4,17 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "postcss public/styles/tailwind.css -o public/styles/style.css && nodemon app.js"
+    "start": "npm i && nodemon --watch public app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^10.4.0",
-    "express": "^4.17.1",
-    "postcss": "^8.3.11",
-    "postcss-cli": "^9.0.2",
-    "tailwindcss": "^2.2.19"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
