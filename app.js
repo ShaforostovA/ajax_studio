@@ -1,3 +1,5 @@
+const job = require("./fanction.js")
+
 const express = require('express')
 const app = express()
 const port = 3000
@@ -11,6 +13,10 @@ const obj = {
 // sendFile will go here
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/index.html")
+});
+
+app.post('/person/list', (req, res) => {
+    res.send(job.getPersons())
 });
 
 app.listen(port, () => {
