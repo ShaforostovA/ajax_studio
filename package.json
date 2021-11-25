@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch public app.js"
+    "start": "npm i && nodemon --watch public app.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "pg": "^8.7.1"
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
