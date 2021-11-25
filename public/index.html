@@ -11,11 +11,13 @@
           crossorigin="anonymous"
     >
     <!--  JQUERY  -->
-    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script
     >
-    <script defer src="src.js"></script>
+    <!--  AXIOS  -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="src.js"></script>
 </head>
 <body>
     <div id="app">
@@ -26,10 +28,11 @@
                         Информация о человеке
                     </h3>
                     <div id="select__persone" class="form-group">
+                        <label for="input">Выбрать человека</label>
                         <select id="input"
                                 class="form-select"
                         >
-                            <option selected>Open this select menu</option>
+                            <option selected>Выбрать автора</option>
                         </select>
                     </div>
                     </div>
