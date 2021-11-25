@@ -6,36 +6,37 @@ const port = 3000
 const obj = [
     {
         status: 200,
-        file: 'public/index.html',
+        file: 'public/index.ejs',
         author: "Андрей"
     },
     {
         status: 201,
-        file: 'public/index.html',
+        file: 'public/index.ejs',
         author: "Олег"
     },
     {
         status: 202,
-        file: 'public/index.html',
+        file: 'public/index.ejs',
         author: "Виталя"
     },
     {
         status: 203,
-        file: 'public/index.html',
+        file: 'public/index.ejs',
         author: "Саня"
     },
     {
         status: 204,
-        file: 'public/index.html',
+        file: 'public/index.ejs',
         author: "Акакий"
     }
 ]
 
+app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 // sendFile will go here
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + "/public/index.html")
+    res.render(__dirname + "/public/index.ejs")
 });
 
 app.get('/test', (req, res) => {
