@@ -47,6 +47,7 @@ app.get('/test', (req, res) => {
 
 app.post('/person/list', (req, res) => {
     res.send(job.getPersons())
+    console.log(res)
 });
 
 app.listen(port, () => {
