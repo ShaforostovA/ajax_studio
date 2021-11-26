@@ -3,10 +3,17 @@ const PORT = 3000
 $(document).ready(async () => {
     let isSuccessfully = await GetPersonsInfoRequest("/person/list", PORT)
 
+    console.log(isSuccessfully)
+
     if(isSuccessfully.status === 200)
     {
+        /*
+         * Получить <input>
+         * Получить данные из запроса
+         * И заполнить comboBox данными из запроса
+         */
         const elementInput = $("#input")
-        let personData = isSuccessfully.data
+        const personData = isSuccessfully.data
         AddDataInComboBox(personData)
 
         let idPerson = elementInput.val()

@@ -1,4 +1,3 @@
-const response = require("express");
 const { Pool } = require('pg');
 
 const pool  = new Pool ({
@@ -10,8 +9,13 @@ const pool  = new Pool ({
 });
 
 async function getPersons() {
-    const { rows } = await pool.query(`SELECT * FROM persons ORDER BY lastName`)
-    return rows
+    try{
+        const { rows } = await pool.query(`SELECT * FROM persons ORDER BY lastName`)
+        return rows
+    }
+    catch(e){
+        console.log(e.message)
+    }
 }
 
 module.exports = {

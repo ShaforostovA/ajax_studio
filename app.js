@@ -1,4 +1,4 @@
-const job = require("./database.js")
+const database = require("./database.js")
 
 const express = require('express')
 
@@ -18,11 +18,15 @@ app.get('/', (req, res) => {
     res.render(__dirname + "/public/index.ejs")
 });
 
+/**
+ * Получить информацию о пользователях при загрузке странице
+ */
 app.post('/person/list', async (req, res) => {
-    let resData = await job.getPersons()
+    let resData = await database.getPersons()
     res.status(200).json(resData)
 });
 
+// Слушать порт
 app.listen(port, () => {
-    console.log(`Listen http://localhost:${port}`)
+    console.log(`\n Listen http://localhost:${port} \n`)
 })
