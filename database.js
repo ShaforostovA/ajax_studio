@@ -19,9 +19,13 @@ async function getPersons() {
 }
 
 async function getPrice() {
+    let data = [];
     try{
         const { rows } = await pool.query(`SELECT "servicename", "price" FROM services;`)
-        return rows
+        for(let iter = 0; iter < rows.length; ++iter){
+            data.push(rows[iter].servicename, rows[iter].price);
+        }
+        return data
     }
     catch(e){
         console.log(e.message)
