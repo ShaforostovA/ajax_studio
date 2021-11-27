@@ -23,7 +23,7 @@ async function getPrice() {
     try{
         const { rows } = await pool.query(`SELECT "servicename", "price" FROM services;`)
         for(let iter = 0; iter < rows.length; ++iter){
-            data.push(rows[iter].servicename, rows[iter].price);
+            data.push([rows[iter].servicename, rows[iter].price]);
         }
         return data
     }
