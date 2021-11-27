@@ -10,42 +10,46 @@ $("document").ready( async () => {
         console.log(responseData)
 
         $(".field").change(() => {
-            let sum
-
-            const dfkhgdfjl = GetPriceFromService(responseData, "Ворота")
-
-            console.log(dfkhgdfjl)
+            let sum = 0
 
             let sum_sheet =
                 (Number($("#fence_height").val()) * Number($("#fence_length").val()))
                     * Number($("#sheet_thickness").val())
                         * GetPriceFromService(responseData, "Лист")
 
+            if($("#coating").val() === "2")
+                sum_sheet *= 2
+
             let gateAndWicket =
                 Number($("#the_presence_of_agate").val()) * GetPriceFromService(responseData, "Ворота")
                     + Number($("#the_presence_of_wickets").val())
                         * GetPriceFromService(responseData, "Калитка")
 
-            sum = sum_sheet + gateAndWicket
+            let logs = Number($("#fence_strengthening_with_logs").val()) * GetPriceFromService(responseData, "Лаги")
+
+            let delivery = 0
+            if($("#delivery_direction").val() === "1")
+                delivery = GetPriceFromService(responseData, "Доставка")
+
+            sum = sum_sheet + gateAndWicket + logs + delivery
 
             $("#send_info_btn")
                 .text(`Итоговая стоимость ${sum}`)
         })
 
         $("#send_info_btn").click( async () => {
-
+            await axios.post
         })
     }
 })
 
 function GetPriceFromService(data, nameField)
 {
-    data.forEach( iter => {
-        const servicename = iter.servicename
-        const price = Number(iter.price)
-        if(servicename === nameField)
-            return price
-    })
+    for(let iter in data)
+    {
+        if(data[iter][0] === nameField)
+            return Number(data[iter][1])
+    }
 }
 
 /**
