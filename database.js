@@ -4,7 +4,7 @@ const pool  = new Pool ({
     user: 'admin',
     host: 'localhost',
     database: 'viridium',
-    password: 'venik5432',
+    password: '12345',
     port: 5432,
 });
 
@@ -18,6 +18,17 @@ async function getPersons() {
     }
 }
 
+async function getPrice() {
+    try{
+        const { rows } = await pool.query(`SELECT "servicename", "price" FROM services;`)
+        return rows
+    }
+    catch(e){
+        console.log(e.message)
+    }
+}
+
 module.exports = {
     getPersons: getPersons,
+    getPrice:   getPrice,
 };
