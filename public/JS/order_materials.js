@@ -34,7 +34,7 @@ $("document").ready( async () => {
             sum = sum_sheet + gateAndWicket + logs + delivery
 
             $("#send_info_btn")
-                .text(`Итоговая стоимость ${sum}`)
+                .text(`Итоговая стоимость ${sum} руб.`)
         })
 
         $("#send_info_btn").click( async () => {
