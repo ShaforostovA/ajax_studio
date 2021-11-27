@@ -26,6 +26,16 @@ app.post('/person/list', async (req, res) => {
     res.status(200).json(resData)
 });
 
+/**
+ * Получить информацию о пользователях при загрузке странице
+ */
+app.get('/person/all_infa', async (req, res) => {
+    let resData = await database.getPersons()
+    res.render(__dirname + "/public/all_infa.ejs", {
+        information: resData
+    })
+});
+
 // Слушать порт
 app.listen(port, () => {
     console.log(`\n Listen http://localhost:${port} \n`)

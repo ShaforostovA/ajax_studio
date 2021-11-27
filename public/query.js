@@ -1,5 +1,4 @@
 /**
- *
  * @param apiPath = api маршрут
  * @param port - порт
  * @return - успешность выполнения
