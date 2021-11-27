@@ -4,7 +4,7 @@ const pool  = new Pool ({
     user: 'admin',
     host: 'localhost',
     database: 'viridium',
-    password: '12345',
+    password: 'venik5432',
     port: 5432,
 });
 

@@ -19,6 +19,23 @@ app.get('/', (req, res) => {
 });
 
 /**
+ * Получить информацию о пользователях и вывести
+ */
+app.get('/person/all_infa', async (req, res) => {
+    let resData = await database.getPersons()
+    res.render(__dirname + "/public/all_infa.ejs", {
+        information: resData
+    })
+});
+
+/**
+ * Получить информацию о пользователях и вывести
+ */
+app.get('/order_materials', async (req, res) => {
+    res.render(__dirname + "/public/order_materials.ejs")
+});
+
+/**
  * Получить информацию о пользователях при загрузке странице
  */
 app.post('/person/list', async (req, res) => {
@@ -27,13 +44,11 @@ app.post('/person/list', async (req, res) => {
 });
 
 /**
- * Получить информацию о пользователях при загрузке странице
+ * Получить информацию о ценах
  */
-app.get('/person/all_infa', async (req, res) => {
-    let resData = await database.getPersons()
-    res.render(__dirname + "/public/all_infa.ejs", {
-        information: resData
-    })
+app.post('/order_materials/list', async (req, res) => {
+    let resData = await database.getPrice()
+    res.status(200).json(resData)
 });
 
 // Слушать порт

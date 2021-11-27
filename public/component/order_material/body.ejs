@@ -3,7 +3,7 @@
         <span class="input-group-text" id="basic-addon1">Толщина листа, мм</span>
         <input type="text"
                id="sheet_thickness"
-               class="form-control"
+               class="form-control field"
                aria-describedby="basic-addon1"
         >
     </div>
@@ -14,7 +14,18 @@
         <span class="input-group-text" id="basic-addon1">Высота забора, м</span>
         <input type="text"
                id="fence_height"
-               class="form-control"
+               class="form-control field"
+               aria-describedby="basic-addon1"
+        >
+    </div>
+</div>
+
+<div class="row">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Длина забора, м</span>
+        <input type="text"
+               id="fence_length"
+               class="form-control field"
                aria-describedby="basic-addon1"
         >
     </div>
@@ -24,7 +35,7 @@
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Покрытие</span>
         <select id="coating"
-                class="form-select"
+                class="form-select field"
         >
             <option value="1">Одностороннее</option>
             <option value="2">Двухстороннее</option>
@@ -34,20 +45,9 @@
 
 <div class="row">
     <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Длина забора, м</span>
-        <input type="text"
-               id="fence_length"
-               class="form-control"
-               aria-describedby="basic-addon1"
-        >
-    </div>
-</div>
-
-<div class="row">
-    <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Наличие ворот</span>
         <select id="the_presence_of_agate"
-                class="form-select"
+                class="form-select field"
         >
             <option value="0">0</option>
             <option value="1">1</option>
@@ -62,7 +62,7 @@
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Наличие калиток</span>
         <select id="the_presence_of_wickets"
-                class="form-select"
+                class="form-select field"
         >
             <option value="1">1</option>
             <option value="2">2</option>
@@ -76,7 +76,7 @@
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Забор укрепление лагами</span>
         <select id="fence_strengthening_with_logs"
-                class="form-select"
+                class="form-select field"
         >
             <option value="1">1 лага</option>
             <option value="2">2 лаги</option>
@@ -88,7 +88,7 @@
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Направление доставки</span>
         <select id="delivery_direction"
-                class="form-select"
+                class="form-select field"
         >
             <option value="0">Без доставки</option>
             <option value="1">С доставкой</option>
@@ -97,7 +97,8 @@
 </div>
 
 <div class="row">
-    <button type="button"
+    <button id="send_info_btn"
+            type="button"
             class="btn btn-primary">
         Оправить форму
     </button>
